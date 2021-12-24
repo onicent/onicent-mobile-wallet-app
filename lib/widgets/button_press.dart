@@ -26,27 +26,16 @@ class _ButtonPressState extends State<ButtonPress> {
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    return Material(
-      child: InkWell(
-        onTap: widget.onPress,
-        child: Ink(
-          height: widget.height ?? 48.0,
-          width: widget.width ?? double.infinity,
-          decoration: BoxDecoration(
-            color: widget.backgroundColor ?? colorScheme.secondary,
-            borderRadius: BorderRadius.circular(5.0),
-          ),
-          child: Center(
-            child: Text(
-              widget.title,
-              style: TextStyle(
-                color: widget.textColor ?? Colors.white,
-                fontSize: 16.0,
-                fontWeight: FontWeight.w400,
-              ),
-            ),
-          ),
-        ),
+    return SizedBox(
+      width: double.infinity,
+      height: 50.0,
+      child: FlatButton(
+        child: Text(widget.title, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400)),
+        color: Theme.of(context).buttonColor,
+        textColor: Colors.white,
+
+        onPressed: widget.onPress,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5.0)),
       ),
     );
   }

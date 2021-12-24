@@ -47,10 +47,10 @@ class _ItemState extends State<Item> {
           ),
           bottom: BorderSide(
             width: widget.borderBottom ? 1.0 : 0.0,
-            color: widget.borderBottom ? Color(0xFFF3F3FF): Colors.transparent,
+            color: widget.borderBottom ? Theme.of(context).dividerColor : Colors.transparent,
           ),
         ),
-        color: Colors.white,
+        color: Theme.of(context).backgroundColor,
       ),
       padding: const EdgeInsets.symmetric(horizontal: 0.0),
       child: InkWell(
@@ -76,7 +76,7 @@ class _ItemState extends State<Item> {
                             widget.title,
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: widget.titleStyle ?? const TextStyle(fontSize: 16.0),
+                            style: widget.titleStyle ?? const TextStyle(fontSize: 16.0, fontWeight: FontWeight.w400),
                           ),
                         ),
                         widget.subTitle != ''
@@ -89,7 +89,9 @@ class _ItemState extends State<Item> {
                                   style: const TextStyle(
                                       height: 1.3,
                                       fontSize: 14.0,
-                                      color: Colors.black54),
+                                      fontWeight: FontWeight.w400,
+                                      color: Colors.grey,
+                                  ),
                                 ),
                               )
                             : const SizedBox(),

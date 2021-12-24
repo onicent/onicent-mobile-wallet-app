@@ -41,10 +41,10 @@ class _EmptyScreenState extends State<EmptyScreen> {
   @override
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
-      statusBarColor: Theme.of(context).colorScheme.primary,
+      // statusBarColor: Theme.of(context).primaryColor,
     ));
     return Scaffold(
-      backgroundColor: Color(0xFFF3F4F5),
+      // backgroundColor: Theme.of(context).backgroundColor,
       appBar: widget.appBar != null
           ? AppBar(
               elevation: 0.0,
